@@ -2,7 +2,7 @@
 <head>
     <meta charset="utf-8">
 
-    <title>Setting up a free blogging platform using Ghost, Buster and GitHub Pages</title>
+    <title>Setting up a free blogging platform using Ghost, Buster and Github Pages</title>
     <meta name="description" content="">
 
     <meta name="HandheldFriendly" content="True">
@@ -15,13 +15,13 @@
     
     <meta property="og:site_name" content="Michael Claassen's Developer Blog">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Setting up a free blogging platform using Ghost, Buster and GitHub Pages">
+    <meta property="og:title" content="Setting up a free blogging platform using Ghost, Buster and Github Pages">
     <meta property="og:description" content="Overview Ghost is blogging platform similar to WordPress. It lets you create and edit posts in markdown through a UI. Ghost provides hosting as well, but at $5/month for only 10,0000 page views. Buster is a tool which can generate static content from a running Ghost instance and">
     <meta property="og:url" content="http://localhost:2368/setting-up-a-free-blogging-platform-using-ghost-buster-and-github-pages/">
     <meta property="article:published_time" content="2017-02-19T16:59:39.000Z">
-    <meta property="article:modified_time" content="2017-02-19T17:07:12.000Z">
+    <meta property="article:modified_time" content="2017-02-19T17:26:40.000Z">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Setting up a free blogging platform using Ghost, Buster and GitHub Pages">
+    <meta name="twitter:title" content="Setting up a free blogging platform using Ghost, Buster and Github Pages">
     <meta name="twitter:description" content="Overview Ghost is blogging platform similar to WordPress. It lets you create and edit posts in markdown through a UI. Ghost provides hosting as well, but at $5/month for only 10,0000 page views. Buster is a tool which can generate static content from a running Ghost instance and">
     <meta name="twitter:url" content="http://localhost:2368/setting-up-a-free-blogging-platform-using-ghost-buster-and-github-pages/">
     <meta name="twitter:label1" content="Written by">
@@ -42,10 +42,10 @@
         "url": "http://localhost:2368/author/michael/",
         "sameAs": []
     },
-    "headline": "Setting up a free blogging platform using Ghost, Buster and GitHub Pages",
+    "headline": "Setting up a free blogging platform using Ghost, Buster and Github Pages",
     "url": "http://localhost:2368/setting-up-a-free-blogging-platform-using-ghost-buster-and-github-pages/",
     "datePublished": "2017-02-19T16:59:39.000Z",
-    "dateModified": "2017-02-19T17:07:12.000Z",
+    "dateModified": "2017-02-19T17:26:40.000Z",
     "description": "Overview Ghost is blogging platform similar to WordPress. It lets you create and edit posts in markdown through a UI. Ghost provides hosting as well, but at $5/month for only 10,0000 page views. Buster is a tool which can generate static content from a running Ghost instance and",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -839,7 +839,7 @@
         <article class="post">
 
             <header class="post-header">
-                <h1 class="post-title">Setting up a free blogging platform using Ghost, Buster and GitHub Pages</h1>
+                <h1 class="post-title">Setting up a free blogging platform using Ghost, Buster and Github Pages</h1>
                 <section class="post-meta">
                     <p class="author">by <a href="../../author/michael/">Michael Claassen</a></p>
                     <time class="post-date" datetime="2017-02-19">2017-02-19</time>
@@ -849,9 +849,9 @@
 
                 <h5 id="overview">Overview</h5>
 
-<p>Ghost is blogging platform similar to WordPress. It lets you create and edit posts in markdown through a UI. Ghost provides hosting as well, but at $5/month for only 10,0000 page views.</p>
+<p><a href="https://ghost.org/">Ghost</a> is blogging platform similar to WordPress. It lets you create and edit posts in markdown through a UI. Ghost provides hosting as well, but at $5/month for only 10,0000 page views.</p>
 
-<p>Buster is a tool which can generate static content from a running Ghost instance and publishes that content to a Github pages repository. Using Buster you can generate content using Ghost and host it for free using Github Pages!</p>
+<p><a href="https://github.com/axitkhurana/buster">Buster</a> is a tool which can generate static content from a running Ghost instance and publishes that content to a Github pages repository. Using Buster you can generate content using Ghost and host it for free using Github Pages!</p>
 
 <p>This is a step-by-step guide to setting all of this up. This blog was created using this exact same setup.</p>
 
@@ -867,17 +867,17 @@ $ cd ~/blog
 
 <p>Install pip:  </p>
 
-<pre><code>$ sudo easy_install pip
+<pre><code class="language-bash">$ sudo easy_install pip
 </code></pre>
 
 <p>Install Buster:  </p>
 
-<pre><code>$ sudo pip install buster
+<pre><code class="language-bash">$ sudo pip install buster
 </code></pre>
 
 <p>Download and install Ghost:  </p>
 
-<pre><code>$ wget https://github.com/TryGhost/Ghost/releases/download/0.11.4/Ghost-0.11.4.zip
+<pre><code class="language-bash">$ wget https://github.com/TryGhost/Ghost/releases/download/0.11.4/Ghost-0.11.4.zip
 $ unzip Ghost-0.11.4.zip -d ghost
 $ cd ghost
 $ npm install --production
@@ -892,23 +892,27 @@ $ npm install --production
 
 <h5 id="configurebuster">Configure Buster</h5>
 
-<pre><code>$ buster setup --gh-repo="https://github.com/&lt;username&gt;/&lt;username&gt;.github.io.git"
+<pre><code class="language-bash">$ buster setup --gh-repo="https://github.com/&lt;username&gt;/&lt;username&gt;.github.io.git"
 </code></pre>
 
 <h5 id="editingandpublishingcontent">Editing and publishing content</h5>
 
 <p>Start Ghost:  </p>
 
-<pre><code>$ npm start
+<pre><code class="language-bash">$ npm start
 </code></pre>
 
 <p>Go to <a href="../../ghost">http://localhost:2368/ghost</a> to edit content. The first time you run Ghost you will be asked to create a login account.</p>
 
 <p>Once you are done creating or editing your posts, use Buster to generate the static content and push it to Github:  </p>
 
-<pre><code>$ buster generate
+<pre><code class="language-bash">$ buster generate
 $ buster deploy
 </code></pre>
+
+<h5 id="nextsteps">Next steps</h5>
+
+<p><a href="http://envyandroid.com/syntax-highlighting-in-ghost/">Add syntax highlighting support to Ghost using Prism</a></p>
 
             </section>
 
