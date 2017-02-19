@@ -1,0 +1,218 @@
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Setting up a free blogging platform using Ghost, Buster and GitHub Pages</title>
+    <meta name="description" content="">
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="../favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=4c30dfe6ac">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic%7COpen+Sans:700,400">
+
+    <link rel="canonical" href="index.html">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="amp/index.html">
+    
+    <meta property="og:site_name" content="Michael Claassen's Developer Blog">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Setting up a free blogging platform using Ghost, Buster and GitHub Pages">
+    <meta property="og:description" content="Overview Ghost is blogging platform similar to WordPress. It lets you create and edit posts in markdown through a UI. Ghost provides hosting as well, but at $5/month for only 10,0000 page views. Buster is a tool which can generate static content from a running Ghost instance and">
+    <meta property="og:url" content="http://localhost:2368/setting-up-a-free-blogging-platform-using-ghost-buster-and-github-pages/">
+    <meta property="article:published_time" content="2017-02-19T16:59:39.000Z">
+    <meta property="article:modified_time" content="2017-02-19T17:07:12.000Z">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Setting up a free blogging platform using Ghost, Buster and GitHub Pages">
+    <meta name="twitter:description" content="Overview Ghost is blogging platform similar to WordPress. It lets you create and edit posts in markdown through a UI. Ghost provides hosting as well, but at $5/month for only 10,0000 page views. Buster is a tool which can generate static content from a running Ghost instance and">
+    <meta name="twitter:url" content="http://localhost:2368/setting-up-a-free-blogging-platform-using-ghost-buster-and-github-pages/">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Michael Claassen">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Michael Claassen&#x27;s Developer Blog",
+        "logo": "http://localhost:2368/ghost/img/ghosticon.jpg"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Michael Claassen",
+        "url": "http://localhost:2368/author/michael/",
+        "sameAs": []
+    },
+    "headline": "Setting up a free blogging platform using Ghost, Buster and GitHub Pages",
+    "url": "http://localhost:2368/setting-up-a-free-blogging-platform-using-ghost-buster-and-github-pages/",
+    "datePublished": "2017-02-19T16:59:39.000Z",
+    "dateModified": "2017-02-19T17:07:12.000Z",
+    "description": "Overview Ghost is blogging platform similar to WordPress. It lets you create and edit posts in markdown through a UI. Ghost provides hosting as well, but at $5/month for only 10,0000 page views. Buster is a tool which can generate static content from a running Ghost instance and",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 0.11">
+    <link rel="alternate" type="application/rss+xml" title="Michael Claassen's Developer Blog" href="../rss/index.html">
+</head>
+<body class="post-template nav-closed">
+
+    <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="index.html#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+            <li class="nav-home" role="presentation"><a href="../">Home</a></li>
+    </ul>
+        <a class="subscribe-button icon-feed" href="../rss/index.rss">Subscribe</a>
+</div>
+<span class="nav-cover"></span>
+
+
+    <div class="site-wrapper">
+
+        
+
+
+<header class="main-header post-head no-cover">
+    <nav class="main-nav  clearfix">
+        
+            <a class="menu-button icon-menu" href="index.html#"><span class="word">Menu</span></a>
+    </nav>
+</header>
+
+<main class="content" role="main">
+    <article class="post">
+
+        <header class="post-header">
+            <h1 class="post-title">Setting up a free blogging platform using Ghost, Buster and GitHub Pages</h1>
+            <section class="post-meta">
+                <time class="post-date" datetime="2017-02-19">19 February 2017</time> 
+            </section>
+        </header>
+
+        <section class="post-content">
+            <h5 id="overview">Overview</h5>
+
+<p>Ghost is blogging platform similar to WordPress. It lets you create and edit posts in markdown through a UI. Ghost provides hosting as well, but at $5/month for only 10,0000 page views.</p>
+
+<p>Buster is a tool which can generate static content from a running Ghost instance and publishes that content to a Github pages repository. Using Buster you can generate content using Ghost and host it for free using Github Pages!</p>
+
+<p>This is a step-by-step guide to setting all of this up. This blog was created using this exact same setup.</p>
+
+<h5 id="createafolderforyourblog">Create a folder for your blog</h5>
+
+<p>Create a folder to work in:  </p>
+
+<pre><code class="language-bash">$ mkdir ~/blog
+$ cd ~/blog
+</code></pre>
+
+<h5 id="installdependencies">Install dependencies</h5>
+
+<p>Install pip:  </p>
+
+<pre><code>$ sudo easy_install pip
+</code></pre>
+
+<p>Install Buster:  </p>
+
+<pre><code>$ sudo pip install buster
+</code></pre>
+
+<p>Download and install Ghost:  </p>
+
+<pre><code>$ wget https://github.com/TryGhost/Ghost/releases/download/0.11.4/Ghost-0.11.4.zip
+$ unzip Ghost-0.11.4.zip -d ghost
+$ cd ghost
+$ npm install --production
+</code></pre>
+
+<h5 id="creategithubpagesrepository">Create Github Pages repository</h5>
+
+<p>Create a new repository with the following name: <br>
+<code>https://github.com/&lt;username&gt;/&lt;username&gt;.github.io.git</code></p>
+
+<p>The repository name must match this format exactly for Github to know to create a static site from this repository.</p>
+
+<h5 id="configurebuster">Configure Buster</h5>
+
+<pre><code>$ buster setup --gh-repo="https://github.com/&lt;username&gt;/&lt;username&gt;.github.io.git"
+</code></pre>
+
+<h5 id="editingandpublishingcontent">Editing and publishing content</h5>
+
+<p>Start Ghost:  </p>
+
+<pre><code>$ npm start
+</code></pre>
+
+<p>Go to <a href="../ghost">http://localhost:2368/ghost</a> to edit content. The first time you run Ghost you will be asked to create a login account.</p>
+
+<p>Once you are done creating or editing your posts, use Buster to generate the static content and push it to Github:  </p>
+
+<pre><code>$ buster generate
+$ buster deploy
+</code></pre>
+        </section>
+
+        <footer class="post-footer">
+
+
+
+            <section class="author">
+                <h4><a href="../author/michael/">Michael Claassen</a></h4>
+
+                    <p>Read <a href="../author/michael/">more posts</a> by this author.</p>
+                <div class="author-meta">
+                    
+                    
+                </div>
+            </section>
+
+
+            <section class="share">
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="https://twitter.com/intent/tweet?text=Setting%20up%20a%20free%20blogging%20platform%20using%20Ghost%2C%20Buster%20and%20GitHub%20Pages&amp;url=http://localhost:2368/setting-up-a-free-blogging-platform-using-ghost-buster-and-github-pages/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:2368/setting-up-a-free-blogging-platform-using-ghost-buster-and-github-pages/" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://localhost:2368/setting-up-a-free-blogging-platform-using-ghost-buster-and-github-pages/" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+
+
+        </footer>
+
+    </article>
+</main>
+
+<aside class="read-next">
+</aside>
+
+
+
+        <footer class="site-footer clearfix">
+            <section class="copyright"><a href="../">Michael Claassen's Developer Blog</a> © 2017</section>
+            <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
+        </footer>
+
+    </div>
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+    
+    <script type="text/javascript" src="../assets/js/jquery.fitvids.js?v=4c30dfe6ac"></script>
+    <script type="text/javascript" src="../assets/js/index.js?v=4c30dfe6ac"></script>
+
+</body>
