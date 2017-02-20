@@ -595,7 +595,8 @@ body.nav-opened .site-wrapper {
 }
 
 .main-nav {
-    position: relative;
+    /*position: fixed;*/
+    /*right: 20px;*/
     padding: 35px 40px;
     margin: 0 0 30px 0;
 }
@@ -710,6 +711,16 @@ body.nav-opened .nav {
     counter-reset: item;
 }
 
+.nav ul.sub-menu {
+    padding: 0px 9% 5%;
+    height: 30%;
+    overflow-y: auto;
+}
+
+.sub-menu-heading {
+    margin: 0px 9% 5%;
+}
+
 .nav li:before {
     display: block;
     float: right;
@@ -719,8 +730,8 @@ body.nav-opened .nav {
     font-size: 1.2rem;
     vertical-align: bottom;
     color: #B8B8B8;
-    content: counter(item, lower-roman);
-    counter-increment: item;
+    /*content: counter(item, lower-roman);*/
+    /*counter-increment: item;*/
 }
 .nav li {
     margin: 0;
@@ -737,7 +748,7 @@ body.nav-opened .nav {
 }
 .nav li a:after {
     display: inline-block;
-    content: " .......................................................";
+    /*content: " .......................................................";*/
     color: rgba(255,255,255,0.2);
     margin-left: 5px;
 }
@@ -745,8 +756,8 @@ body.nav-opened .nav {
     color: #fff;
 }
 .nav .nav-current a:after {
-    content: " ";
-    border-bottom: rgba(255,255,255,0.5) 1px solid;
+    /*content: " ";*/
+    /*border-bottom: rgba(255,255,255,0.5) 1px solid;*/
     width: 100%;
     height: 1px;
 }
@@ -878,6 +889,8 @@ body.nav-opened .nav {
     white-space: nowrap;
     border-radius: 3px;
     transition: all 0.5s ease;
+    /*position: fixed;*/
+    /*right: 50px;*/
 }
 .menu-button:before {
     font-size: 12px;
@@ -922,6 +935,7 @@ body.nav-opened .nav {
         -ms-transform: translate3D(94px, 0, 0);
             transform: translate3D(94px, 0, 0);
     transition: all 0.3s ease;
+    display: none;
 }
 
 .nav-opened .menu-button .word {
@@ -2244,12 +2258,6 @@ body.page-template .post-title {
         -webkit-transform: translateY(-5px) rotate(-90deg);
                 transform: translateY(-5px) rotate(-90deg);
     }
-}
-
-.nav2 {
-  /*position: fixed;*/
-  /*z-index: 9999999;*/
-  /*width: 100%;*/
 }
 
 .nav2 ul {
