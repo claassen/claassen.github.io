@@ -2246,6 +2246,43 @@ body.page-template .post-title {
     }
 }
 
+.nav2 {
+  /*position: fixed;*/
+  /*z-index: 9999999;*/
+  /*width: 100%;*/
+}
+
+.nav2 ul {
+  list-style-type: none;
+  background-color: #444;
+  text-align: center;
+  padding: 0;
+  padding-left: 10px;
+  margin: 0;
+}
+.nav2 li {
+  /*font-family: 'Oswald', sans-serif;*/
+  font-size: 1.2em;
+  line-height: 40px;
+  height: 40px;
+  /*border-bottom: 1px solid #888;*/
+  display: inline;
+  margin-right: 10px;
+}
+
+.nav2 .divider {
+  color: #c7c7c7;
+}
+
+.nav2 a {
+  text-decoration: none;
+  color: #fff;
+  transition: .3s background-color;
+}
+
+.nav2 a:hover {
+  color: #c7c7c7;
+}
 
 /* ==========================================================================
    End of file. Animations should be the last thing here. Do not add stuff
